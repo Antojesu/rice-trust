@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Twin Avatar</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #avatarImage { width: 100px; height: 100px; transition: all 0.5s; }
+    </style>
+</head>
+<body>
+    <h1>Your Digital Twin</h1>
+    <div id="avatar">
+        <img id="avatarImage" src="seed.png" alt="Avatar">
+        <p>Level: <span id="level">1</span></p>
+    </div>
+    <button onclick="donate()">Donate $10</button>
+
+    <script>
+        let level = 1;
+        function donate() {
+            level++;
+            document.getElementById('level').innerText = level;
+            const avatarImage = document.getElementById('avatarImage');
+            if (level >= 5) {
+                avatarImage.src = "tree.png"; // Avatar evolves into a tree
+            } else if (level >= 3) {
+                avatarImage.src = "flower.png"; // Avatar evolves into a flower
+            }
+        }
+    </script>
+</body>
+</html>s

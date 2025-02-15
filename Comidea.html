@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Idea Hub</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .idea { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Community Idea Hub</h1>
+    <div id="ideas"></div>
+
+    <script>
+        // Replace with your Airtable API key and base ID
+        const API_KEY = 'your-airtable-api-key';
+        const BASE_ID = 'your-base-id';
+        const TABLE_NAME = 'Ideas';
+
+        async function fetchIdeas() {
+            const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
+            const response = await fetch(url, {
+                headers: { 'Authorization': `Bearer ${API_KEY}` }
+            });
+            const data = await response.json();
+            displayIdeas(data.records);
+        }
+
+        function displayIdeas(ideas) {
+            const ideasContainer = document.getElementById('ideas');
+            ideasContainer.innerHTML = ideas.map(idea => `
+                <div class="idea">
+                    <h2>${idea.fields.Title}</h2>
+                    <p>${idea.fields.Description}</p>
+                    <p>Votes: ${idea.fields.Votes || 0}</p>
+                    <button onclick="vote('${idea.id}')">Vote</button>
+                </div>
+            `).join('');
+        }
+
+        async function vote(ideaId) {
+            // Update votes in Airtable
+            const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}/${ideaId}`;
+            await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${API_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ fields: { Votes: 1 } }) // Increment votes
+            });
+            fetchIdeas(); // Refresh the list
+        }
+
+        fetchIdeas();
+    </script>
+</body>
+</html>

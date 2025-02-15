@@ -1,0 +1,6 @@
+Name: anto
+Email: antony1962001@gmail.com
+Amount: 100
+Transaction ID: something
+Receipt: uploads/madha amma.jpg
+

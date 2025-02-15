@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz for Good</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .quiz-container { max-width: 600px; margin: 0 auto; text-align: center; }
+        .question { font-size: 1.5em; margin-bottom: 20px; }
+        .options button { margin: 10px; padding: 10px 20px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz for Good</h1>
+        <div id="quiz">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What is the capital of France?", options: ["Paris", "London", "Berlin"], answer: "Paris" },
+            { question: "How many SDGs are there?", options: ["15", "17", "20"], answer: "17" }
+        ];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            questionElement.innerText = questions[currentQuestion].question;
+            optionsElement.innerHTML = questions[currentQuestion].options
+                .map(option => `<button onclick="checkAnswer('${option}')">${option}</button>`)
+                .join('');
+        }
+
+        function checkAnswer(answer) {
+            if (answer === questions[currentQuestion].answer) {
+                score++;
+                alert("Correct!");
+            } else {
+                alert("Wrong!");
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert(`Quiz over! Your score is ${score}/${questions.length}`);
+            }
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Dashboard</title>
+    <style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2C2C48;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #3C3C5A;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.logo p {
+    font-size: 14px;
+    color: #A1A1B7;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-form .form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.login-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #EFEFF5;
+    color: #333333;
+}
+
+.btn {
+    background-color: #32B4F1;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #289AD6;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #A1A1B7;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.help-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #32B4F1;
+    border: 2px solid #32B4F1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    background-color: #32B4F1;
+    color: #FFFFFF;
+}
+
+.footer-links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #A1A1B7;
+}
+
+.footer-links a {
+    color: #A1A1B7;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+    </style>
+        
+<body>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="logo.jpg" alt="OneShop Logo" />
+            <h1>RICE TRUST</h1>
+            <p>Help The Poor</p>
+        </div>
+        <h2>Welcome Back!</h2>
+        <form class="login-form" action="login.php" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your password" required>
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+            <a href="#" class="forgot-password">Forget My Password</a>
+        </form>
+        <div class="help-links">
+            <a href="#" class="btn-outline">Request An Account</a>
+            <a href="#" class="btn-outline">Need Help?</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Terms of use</a> | <a href="#">Privacy policy</a>
+        </div>
+    </div>
+
+    <div id="loading" style="display: none;">Loading...</div>
+    
+    <div>
+      
+    </div>
+</body>
+</html>

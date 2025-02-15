@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+  $(document).ready(function () {
+    $(".menu-toggle").click(function () {
+        $(".nav-links").toggleClass("active");
+    });
+
+    $(".nav-links li").hover(
+        function () {
+            $(this).children(".dropdown").stop(true, true).fadeIn(200);
+        },
+        function () {
+            $(this).children(".dropdown").stop(true, true).fadeOut(200);
+        }
+    );
+});
+
+
+    </script>
+    <style>
+        .nav-links li {
+    position: relative;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #eee;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background: green;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .top-bar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .top-bar .contact-info {
+            font-size: 14px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px 20px;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #eee;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+        }
+        .nav-links li:hover > .dropdown {
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: black;
+        }
+        .menu-toggle i {
+            font-size: 24px;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons a {
+            margin-left: 10px;
+            color: black;
+            font-size: 20px;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fff;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                text-align: center;
+                z-index: 1000;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .dropdown {
+                position: relative;
+                display: none;
+                width: 100%;
+            }
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        <!--newly-updated-->
+
+    .marquee-container{
+    padding: 5px;
+    margin-top: 10px;
+    text-align:center;
+  }
+  .marquee-container marquee{
+    font-size: 18px;
+    font-weight: bold;
+    color: orange;
+    
+    
+  }
+  @media (max-width: 768px){
+    .marquee-container{
+      margin-top: 50px;
+      font-size: 16px;
+    }
+  }
+  .marquee-container{
+    position:relative;
+    z-index: 1;
+  }
+  .h1 h2 h3 h4{
+    font-size: 2rem;
+  }
+  @media (max-width:768px){
+h1 h2 h3 h4{
+  font-size: 1.5em;
+}
+  }
+  .mission{
+    background-color: #95bcde;
+    padding:20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
+  }
+  body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .service{
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fdfbf6;
+        }
+        .service-section h1{
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .service-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-member{
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-member img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-info{
+            padding: 15px;
+            background-color: #e86737;
+            color: white;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 200px;
+        }
+        .service-info h2{
+            margin: 0;
+            font-size: 20px;
+        }
+        .service-info p{
+            margin: 5px 0 0;
+            font-size: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.profile-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fdfbf6;
+}
+
+.profile-section h1, .profile-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Main Profiles (Patron, Organiser, Trustee) */
+.profile-box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px; /* Limit the width of the box */
+  padding: 10px;
+}
+
+.profile-box img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-info {
+  text-align: left;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #e86737;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Volunteer Grid */
+.volunteer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.volunteer-box {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+}
+
+.volunteer-box img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.volunteer-box p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #333;
+}
+<!--about_us-->
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+.container1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-text h2 {
+            color: #0056b3;
+        }
+        .about-text p {
+            line-height: 1.6;
+            color: #333;
+        }
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28a745;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: #218838;
+        }
+        .video-section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        .video-section video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        <!--news_update-->
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .about-section {
+            width: 65%;
+        }
+
+        .about-section h1 {
+            color: #2f5d37;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-section p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .about-section .read-more-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #ff7f27;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .about-section .read-more-btn:hover {
+            background-color: #e96b21;
+        }
+
+        .news-section {
+            width: 30%;
+            background-color: #ffeccf;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff7f27;
+        }
+
+        .news-section h2 {
+            font-size: 1.5rem;
+            color: #2f5d37;
+            margin-bottom: 10px;
+        }
+
+        .news-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .news-section a {
+            color: #ff7f27;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news-section a:hover {
+            text-decoration: underline;
+        }
+        /* Progress Bar Styling */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background-color: green;
+            z-index: 9999;
+        }
+
+        /* Content Styling */
+        .content {
+            height:800px; /* Simulate long content */
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        <!--donate-button-->
+        .donate-button{
+    background-color: orange;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            -webkit-box-reflect: below
+    tpx linear gradient(transparent #0005);
+    box-shadow: 0 0 5px #03e914, 0 0 15px #03e914,
+    0 0 25px #03e914, 0 0 100px #03e9f4;
+  }
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .top-bar {
+            background: green;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .top-bar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        .top-bar .contact-info {
+            font-size: 14px;
+        }
+        .top-bar .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .donate-button {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 15px 20px;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #eee;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+        }
+        .nav-links li:hover > .dropdown {
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: black;
+        }
+        .menu-toggle i {
+            font-size: 24px;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+        }
+        .social-icons a {
+            margin-left: 10px;
+            color: black;
+            font-size: 20px;
+        }
+        .center-text {
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fff;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                text-align: center;
+                z-index: 1000;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .dropdown {
+                position: relative;
+                display: none;
+                width: 100%;
+            }
+        }
+        .background-section {
+            background: url('293678001_2201699676653091_4060767419532220421_n.jpg') no-repeat center center;
+            background-size: cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .background-section {
+                background-position: center top;
+                background-size: contain;
+                height: 50vh;
+            }
+        }
+        .map-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        <!--Dynamic Celebratio-->
+        .celebration-section {
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .celebration {
+            margin-bottom: 20px;
+        }
+
+        .celebration h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .celebration p {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .celebration img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            max-height: 200px; /* Smaller image size */
+            margin: 10px 0;
+        }
+
+        /* Top row styling */
+        .top-row {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .footer
+            {
+              margin-top: 50px;
+              font-size: 16px;
+            }
+          
+          .footer{
+            background-color: black;
+          }
+          .head,p,h4{
+            color: #f5f5f5;
+            display: flex;
+            justify-content: space-around;
+            font-style:italic;
+          }
+          .col{
+            width: 30%;
+            padding: 10px;
+          }
+          .head{
+            font-size: 25px;
+            text-align: 50px;
+          }
+          .head{
+      font-size:25px;
+          }
+          /* General Footer Styling */
+/* General Footer Styling */
+/* General Footer Styling */
+footer {
+    background-color: #18191A;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    max-width: 350px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #ffcc00;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* Right Section - Footer Links */
+.footer-right {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.section {
+    min-width: 200px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #4db8ff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: #4db8ff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #ffcc00;
+}
+
+/* 📱 Mobile Responsive Fixes */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        margin: 5px;
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+      <script>
+          // JavaScript for Scroll Progress Bar
+          window.addEventListener('scroll', () => {
+              const progressBar = document.getElementById('progress-bar');
+              const scrollTop = window.pageYOffset; // Current scroll position
+              const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+              const scrollPercent = (scrollTop / docHeight) * 100; // Calculate percentage
+              progressBar.style.width = scrollPercent + '%'; // Update progress bar width
+          });
+      </script>
+    <header>
+<div class="top-bar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+            <span>RICE TRUST</span>
+        </div>
+        <div class="contact-info">
+            <a href="tel:+919965540741">Call Us: +91-996-5540741</a> |
+            <a href="mailto:tmsrajan@yahoo.co.in">Email: tmsrajan@yahoo.co.in</a> |
+            <a href="aadmin.php">ADMIN</a>
+            <a href="donation.php" class="donate-button">Donate Now</a>
+        </div>
+    </div>
+    <div class="center-text">
+        <h2>RURAL INTEGRATED CHILDCARE AND EDUCATION TRUST</h2>
+        <div class="counter">
+        Visitors Count: <span id="visitorCount">0</span>
+    </div>
+    <?php
+// Database connection
+date_default_timezone_set('Asia/Kolkata'); // Change this to match your country
+
+$host = 'localhost';
+$dbname = 'celebrations_db';
+$username = 'root'; // Default username for MySQL
+$password = ''; // Default password for MySQL
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+// Fetch active celebrations
+$now = date('Y-m-d H:i:s'); // Current date and time
+$stmt = $conn->prepare("SELECT * FROM celebrations WHERE start_time <= :now AND end_time >= :now");
+$stmt->bindParam(':now', $now, PDO::PARAM_STR);
+$stmt->execute();
+$celebrations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$query = $conn->prepare("SELECT NOW()");
+$query->execute();
+$serverTime = $query->fetchColumn();
+echo "<p>Server Time: $serverTime</p>";
+
+?>
+    <nav class="navbar">
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="preview.php">Home</a></li>
+            <li><a href="about_us.html">About</a></li>
+            <li>
+                <a href="profile.html">Organisation Profile</a>
+                <ul class="dropdown">
+                    <li><a href="profile.html">PORFILE</a></li>
+                    <li><a href="objective.html">OBJECTIVIES</a></li>
+                    <li><a href="histroy.html">HISTORY</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="services.html">services</a>
+                <ul class="dropdown">
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Health</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="document.html">document</a></li>
+            <li><a href="gallery.html">gallery</a></li>
+            <li><a href="quiz.html">quiz</a></li>
+                    <li><a href="Comidea.html">Community Idea</a></li>
+                    <li><a href="avatar.html">Avatar</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </nav>
+    <li><a href="ai.html">ChatAI</a></li>
+    <!--body-->
+
+    <div class="marquee-container">
+  <a href="donation.php"><marquee behavior="scroll" direction="left" ><button class="donate-button">DONATE NOW</button></marquee> </a> 
+    </div>
+</body>
+ <script>
+        // Check if the 'visitorCount' exists in localStorage
+        let count = localStorage.getItem('visitorCount');
+        if (!count) {
+            // Initialize visitor count if it doesn't exist
+            count = 0;
+        } else {
+            // Increment the count if it exists
+            count = parseInt(count) + 1;
+        }
+
+        // Save the updated count back to localStorage
+        localStorage.setItem('visitorCount', count);
+
+        // Display the count in the webpage
+        document.getElementById('visitorCount').textContent = count.toString().padStart(5, '0');
+    </script>
+
+<h1>Today's Special Celebrations</h1>
+    <?php if (empty($celebrations)): ?>
+        <p>No active celebrations at the moment.</p>
+    <?php else: ?>
+        <?php foreach ($celebrations as $celebration): ?>
+            <div class="celebration">
+                <h2><?php echo htmlspecialchars($celebration['title']); ?></h2>
+                <?php if (!empty($celebration['image_path'])): ?>
+                    <img src="<?php echo htmlspecialchars($celebration['image_path']); ?>" alt="<?php echo htmlspecialchars($celebration['title']); ?>">
+                <?php endif; ?>
+                <p><?php echo htmlspecialchars($celebration['description']); ?></p>
+                <p><strong>Start Time:</strong> <?php echo date('Y-m-d H:i:s', strtotime($celebration['start_time'])); ?></p>
+                <p><strong>End Time:</strong> <?php echo date('Y-m-d H:i:s', strtotime($celebration['end_time'])); ?></p>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+      
+    <!-- Background Image Section -->
+        <div class="background-section">
+</div>
+
+      <!--mission-->
+      <section class="mission">
+      <h1>OUR MISSION</h1>
+      <h5>We would like to ameliorate the distress of the poor, the marganilaized sections
+        of the society and the needy through Charitable Actions in order to build a better
+        world for the present as well as future generartions
+      </h5>
+    </section>
+  <!-- Additional Content Section -->
+      <div class="map-container">
+          <h2>OUR LOCATION</h2>
+<a href="https://maps.app.goo.gl/2egAVLd8dPe5rxVB7" target="_blank">
+    <img src="map.jpg" alt="Map" style="width:50%; border:1px solid #ccc;" allowfullscreen loading="lazy">
+    <p>Click on the map to view our location on Google Maps.</p>
+</a>
+</div>
+
+<!--our_motto-->
+        <section class="mission">
+              <h2>OUR MOTTO</h2>
+              <h5>Our Trust is committed  to instill human values among the children and the youth  so as to lead a happy and successful life.
+          </h5>
+        </section>
+          <hr>
+      </div>
+    </div>
+    <!--news update-->
+    <div class="container1">
+      <!-- About Section -->
+      <div class="about-section">
+          <h1>Welcome To RICE TRUST</h1>
+          <p>Rice Trust is to help others
+            We are all individuals who are interested in the wellfare of our fellow human begings.
+          RURAL INTEGRATED CHILDCARE AND EDUCATION TRUST is managed by the managing Trustee, Financial Trustee and other Tustees.
+          </p>
+          <a href="about_us.html" class="read-more-btn">Read More</a>
+      </div>
+
+      <!-- News Section -->
+      <div class="news-section">
+          <h2>News & Updates</h2>
+          <p><strong>GROUP IV Exams materials</strong> these whatsapp group will help you to study for the group IV exams <a href="#">Click Here To join The WHATSAPP group</a></p>
+          <p>By Clicking the link you will be directed to the Whatsapp group where you can enroll yourself fully for preparing Group IV Exams <a href="#">Click the link to enroll</a>.</p>
+      </div>
+  </div>
+
+    <section class="service">
+      <h1>TRUST ACTIVITES</h1>
+      <div class="service-container">
+          <div class="service-member">
+              <img src="2.jpg" alt="">
+              <div class="service-info">
+                  <h2>Trustees and Volunteers having meeting with Mr. Antony Lloyd and Mr Shannon Vassou to discuss the future charitable activites at Melamanjampatty</h2>
+              </div>
+          </div>
+          <div class="service-member">
+              <img src="3.jpg" alt="">
+              <div class="service-info">
+                  <h2>Independence day celebration at our study centre at Kolarpatty village- competitions conducted and prizes handed over to the children</h2>
+                  
+              </div>
+          </div>
+          <div class="service-member">
+            <img src="4.jpg" alt="">
+            <div class="service-info">
+                <h2>COVID-19 Welfare scheme -distribution of rice and provisions to a widow</h2>
+               
+            </div>
+        </div>
+        <div class="service-member">
+          <img src="5.jpg" alt="">
+          <div class="service-info">
+              <h2>Study centre at Malaiadipatty village -distribution of stationery materials to the poor children - helping .</h2>
+              
+          </div>
+      </div>
+      </div>
+      </div>
+</section>
+<!--about us-->
+<div class="container1">
+  <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+          We are all individuals who are interested in the wellfare of our fellow human begings.
+          RURAL INTEGRATED CHILDCARE AND EDUCATION TRUST is managed by the managing Trustee, Financial Trustee and other Tustees.
+      </p>
+      <p>
+          Our Organisation is registered under the Indian Trust Act, 1882.Our Registration number is 598/2008.
+          We also registered an Amendment deed vide no 02/2021. The Trustees responsibilities are well defined in accordance with our Trust
+          Deed.
+      </p>
+      <a href="about_us.html" class="read-more-btn">Read More</a>
+  </div>
+  <div class="video-section">
+      <video controls>
+          <source src="vd.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div>
+
+<section class="profile-section">
+  <h1>OUR TEAM</h1>
+
+  <!-- Patron, Organiser, Trustee Profiles -->
+  <div class="profile-box">
+    <img src="patron.jpg" alt="Patron">
+    <div class="profile-info">
+      <H3>PATRON</H3>
+      <h2>MR.THOMAS PATHINATHAN</h2>
+      <h2>M.Sc., M.C.A., B.Ed.,</h2>
+      <p>Retired teacher & social worker<br> Rural integrated childcare and education trust</p>
+        <p>14-B Jhansi Rani Street, Seshayee Nagar, K.K Nagar, TrichY-620021
+      </p>
+    </div>
+  </div>
+
+  <div class="profile-box">
+    <img src="Susai.jpg" alt="Organiser">
+    <div class="profile-info">
+      <H3>FOUNDER AND FINANCIAL TRUSTEE</H3>
+      <h2>MR. THOMAS MARIA SOOSAI RAJAN</h2><br>
+      <br>
+      <p>B.Sc., B.Ed., D.COMM.(CATHOLIC UNIVERSITY OF LYON,FRANCE)</p>
+    </div>
+  </div>
+
+  <div class="profile-box">
+    <img src="jesu.jpg" alt="Trustee">
+    <div class="profile-info">
+      <H3>MANAGING TRUSTEE</H3>
+      <h2>Mr.JESU SELVARAJ</h2>
+      <p></p>
+    </div>
+  </div>
+
+  <!-- Volunteers Section -->
+  <h2>Volunteers</h2>
+  <div class="volunteer-container">
+    <div class="volunteer-box">
+      <h5>MR.ARUN KUMAR A</h5>
+      <h5>M.Sc., B.Ed</h5>
+      <P>CO-ORDINATOR</P>
+    </div>
+  </div>
+  <div class="volunteer-container">
+    <div class="volunteer-box">
+      <h5>MRS. FELICITA A</h5>
+      <h5>M.Sc., B.Ed</h5>
+      <P>CO-ORDINATOR</P>
+    </div>
+  </div>
+  <div class="volunteer-container">
+    <div class="volunteer-box">
+      <h5>INFANTA JESU</h5>
+      <h5>M.A., M.BA., B.Ed</h5>
+      <P>CO-ORDINATOR</P>
+    </div>
+  </div>
+  <div class="volunteer-container">
+    <div class="volunteer-box">
+      <h5>ANTONY JESU</h5>
+      <h5>B.Sc (COMPUTER SCIENCE)</h5>
+      <P>CO-ORDINATOR AND WEB DESIGNER</P>
+    </div>
+  </div>
+  
+  </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="footer-left">
+            <h2>RICE TRUST</h2>
+            <p>Rural Integrated Childcare And Education Trust</p>
+            <p>119, LOURDHU NAGAR MELAMANJAMPATTY, 621307, MANAPARAI TALUK, TRICHY DISTRICT, TAMIL NADU, INDIA</p>
+            <p>📞 +91 996550741</p>
+            <h3>Social Media Icons</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <div class="section">
+                <h3>Who We Are</h3>
+                <ul>
+                    <li><a href="#">Where We Work</a></li>
+                    <li><a href="#">Accountability</a></li>
+                    <li><a href="#">Tribute</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>What We Do</h3>
+                <ul>
+                    <li><a href="#">Educational Sponsorship</a></li>
+                    <li><a href="#">Community Health</a></li>
+                    <li><a href="#">Vocational Training</a></li>
+                    <li><a href="#">Study Centers</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Our Area of Interest</h3>
+                <ul>
+                    <li><a href="#">Health Care</a></li>
+                    <li><a href="#">Sports and Games</a></li>
+                    <li><a href="#">Awareness Programs</a></li>
+                    <li><a href="#">Environmental Protection</a></li>
+                    <li><a href="#">Training for Government Jobs</a></li>
+                    <li><a href="#">Counselling and Guidance</a></li>
+                    <li><a href="#">Naturopathy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 | All Rights Reserved | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+</footer>
+</body>
+</html>
