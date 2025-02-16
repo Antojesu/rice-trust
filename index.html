@@ -998,14 +998,13 @@ echo "<p>Server Time: $serverTime</p>";
             <div class="celebration">
                 <h2><?php echo htmlspecialchars($celebration['title']); ?></h2>
                 <?php if (!empty($celebration['image_path'])): ?>
-                    <img src="<?php echo htmlspecialchars($celebration['image_path']); ?>" alt="<?php echo htmlspecialchars($celebration['title']); ?>">
-                <?php endif; ?>
+                     <img src="<?php echo htmlspecialchars($celebration['image_path']); ?>" alt="Celebration Image">
+                 <?php endif; ?>
                 <p><?php echo htmlspecialchars($celebration['description']); ?></p>
-                <p><strong>Start Time:</strong> <?php echo date('Y-m-d H:i:s', strtotime($celebration['start_time'])); ?></p>
-                <p><strong>End Time:</strong> <?php echo date('Y-m-d H:i:s', strtotime($celebration['end_time'])); ?></p>
-            </div>
-        <?php endforeach; ?>
-    <?php endif; ?>
+             </div>
+         <?php endforeach; ?>
+     <?php endif; ?>
+ </div>
       
     <!-- Background Image Section -->
         <div class="background-section">
